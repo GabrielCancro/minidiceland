@@ -1,0 +1,17 @@
+EDIFICIOS
+centro
+campamento
+aserradero
+granja
+mina
+muelle
+
+CARTAS DE ACCION 
+(una vez por turno robas una)
+(una vez por turno podes elimiar una para robar otra)
+intercambiar (recursos) WO -> FO -> ST -> CU
+alquimia (recursos especiales) +CA +ME +GO
+cocina CA -> FO FO
+forja CA ME -> FUERZA EJERCITO
+trabajo forzado ES -> FO WO 
+exploradores WO WO FO FO -> + exploracion

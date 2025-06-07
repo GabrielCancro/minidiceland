@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://jvgucuwvl4i"]
+
+[ext_resource type="Script" uid="uid://c2gc7fu0r742d" path="res://nodes/ActionPanel.gd" id="1_nf0es"]
+[ext_resource type="Texture2D" uid="uid://d1r0iyc1cc02a" path="res://assets/terrain/grass.png" id="2_cjja1"]
+[ext_resource type="Texture2D" uid="uid://xf4srpep12or" path="res://assets/ui/selector.png" id="3_cjja1"]
+[ext_resource type="PackedScene" uid="uid://clajvh6ir37cf" path="res://nodes/ActionBubble.tscn" id="3_nf0es"]
+
+[node name="ActionPanel" type="Node2D"]
+script = ExtResource("1_nf0es")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_cjja1")
+
+[node name="Selector" type="TextureRect" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+texture = ExtResource("3_cjja1")
+
+[node name="Bubbles" type="Node2D" parent="."]
+
+[node name="b1" parent="Bubbles" instance=ExtResource("3_nf0es")]
+position = Vector2(-91.6, -136.6)

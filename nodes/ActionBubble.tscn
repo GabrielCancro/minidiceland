@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://clajvh6ir37cf"]
+
+[ext_resource type="Texture2D" uid="uid://3dcapextqxbv" path="res://assets/ui/bubble_solid.png" id="1_osqn3"]
+[ext_resource type="Script" uid="uid://bdqv3q11w886s" path="res://nodes/ActionBubble.gd" id="2_c01e0"]
+[ext_resource type="Texture2D" uid="uid://d0ceyob8blj1x" path="res://assets/build/farm.png" id="3_k022v"]
+[ext_resource type="PackedScene" uid="uid://cpsb0bnpvld" path="res://nodes/ResourceView.tscn" id="4_v60ux"]
+
+[sub_resource type="SystemFont" id="SystemFont_c01e0"]
+subpixel_positioning = 0
+
+[node name="ActionBubble" type="Node2D"]
+script = ExtResource("2_c01e0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.616801, 0.645208, 0.642228, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_osqn3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = 32.0
+offset_right = 55.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.686275)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = 27.0
+offset_right = 77.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_c01e0")
+theme_override_font_sizes/font_size = 24
+text = "NAME"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -53.0
+offset_right = 55.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Ico" type="TextureRect" parent="."]
+offset_left = -37.0
+offset_top = -36.0
+offset_right = 37.0
+offset_bottom = 38.0
+mouse_filter = 2
+texture = ExtResource("3_k022v")
+expand_mode = 1
+
+[node name="ResourceView" parent="." instance=ExtResource("4_v60ux")]
+offset_top = 58.0
+offset_bottom = 58.0

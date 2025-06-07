@@ -1,0 +1,183 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgny5nurkuoh"]
+
+[ext_resource type="Script" uid="uid://dbmexplwp1k4p" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://b115bhfnrycvl" path="res://nodes/Camera2D.tscn" id="2_p57ef"]
+[ext_resource type="PackedScene" uid="uid://df2dbvb5q4wdn" path="res://nodes/Terrain.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dspvubiekkps6" path="res://nodes/BuildingCard.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://jvgucuwvl4i" path="res://nodes/ActionPanel.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cm6h2gpsqbau6" path="res://nodes/SpecialActions.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dehtjioq6mmbu" path="res://nodes/dice.tscn" id="13_kvuet"]
+
+[sub_resource type="SystemFont" id="SystemFont_u5sy4"]
+
+[sub_resource type="SystemFont" id="SystemFont_iywne"]
+
+[sub_resource type="SystemFont" id="SystemFont_p57ef"]
+
+[sub_resource type="SystemFont" id="SystemFont_gee14"]
+subpixel_positioning = 0
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0.143741, 0.226259, 0.0667956, 1)
+
+[node name="Camera2D" parent="." instance=ExtResource("2_p57ef")]
+position = Vector2(800, 450)
+position_smoothing_speed = 2.0
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Terrain" parent="Map" instance=ExtResource("4_lbhrr")]
+position = Vector2(797, 342)
+
+[node name="ActionPanel" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(795, 340)
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 736.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0.328055, 0.485623, 0.178031, 0.752941)
+
+[node name="BuildingCard" parent="UI" instance=ExtResource("5_iywne")]
+offset_left = 794.0
+offset_top = 1007.0
+offset_right = 890.0
+offset_bottom = 1103.0
+
+[node name="btn_roll" type="Button" parent="UI"]
+offset_left = 567.0
+offset_top = 737.0
+offset_right = 741.0
+offset_bottom = 787.0
+theme_override_fonts/font = SubResource("SystemFont_u5sy4")
+theme_override_font_sizes/font_size = 30
+text = "ROLL DICES"
+
+[node name="btn_exahuste" type="Button" parent="UI"]
+offset_left = 567.0
+offset_top = 793.0
+offset_right = 759.0
+offset_bottom = 843.0
+theme_override_fonts/font = SubResource("SystemFont_u5sy4")
+theme_override_font_sizes/font_size = 30
+text = "EXAHUSTE"
+
+[node name="btn_floating" type="Button" parent="UI"]
+offset_left = 567.0
+offset_top = 849.0
+offset_right = 759.0
+offset_bottom = 899.0
+theme_override_fonts/font = SubResource("SystemFont_u5sy4")
+theme_override_font_sizes/font_size = 30
+text = "FLOAT DICES"
+
+[node name="btn_add_temp" type="Button" parent="UI"]
+offset_left = 766.0
+offset_top = 849.0
+offset_right = 940.0
+offset_bottom = 899.0
+theme_override_fonts/font = SubResource("SystemFont_u5sy4")
+theme_override_font_sizes/font_size = 30
+text = "ADD TEMP"
+
+[node name="Dices" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 679.0
+offset_bottom = 679.0
+
+[node name="dice" parent="UI/Dices" instance=ExtResource("13_kvuet")]
+offset_left = 111.0
+offset_top = 1.0
+offset_right = 111.0
+offset_bottom = 1.0
+
+[node name="dice2" parent="UI/Dices" instance=ExtResource("13_kvuet")]
+offset_left = 238.0
+offset_top = 1.0
+offset_right = 238.0
+offset_bottom = 1.0
+
+[node name="dice3" parent="UI/Dices" instance=ExtResource("13_kvuet")]
+offset_left = 369.0
+offset_top = 1.0
+offset_right = 369.0
+offset_bottom = 1.0
+
+[node name="dice4" parent="UI/Dices" instance=ExtResource("13_kvuet")]
+offset_left = 498.0
+offset_top = 1.0
+offset_right = 498.0
+offset_bottom = 1.0
+
+[node name="HintLabel" type="Label" parent="UI"]
+offset_left = 931.0
+offset_top = 958.0
+offset_right = 1782.0
+offset_bottom = 1141.0
+theme_override_fonts/font = SubResource("SystemFont_iywne")
+theme_override_font_sizes/font_size = 36
+text = "asdsadasdsad"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RHintLabel" type="RichTextLabel" parent="UI"]
+offset_left = 801.0
+offset_top = 743.0
+offset_right = 1181.0
+offset_bottom = 897.0
+theme_override_constants/line_separation = -7
+theme_override_fonts/normal_font = SubResource("SystemFont_p57ef")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "asdasdasd asd asdasd asd asd asd as das das da a sd asd as d as da sda sdas das d sad as d"
+scroll_active = false
+
+[node name="GameUI" type="ColorRect" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = -882.0
+offset_right = 776.0
+offset_bottom = -776.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.686275)
+
+[node name="Label" type="Label" parent="UI/GameUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_gee14")
+theme_override_font_sizes/font_size = 24
+text = "DIA 1, Primavera
+asdasdasdasdasd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpecialActions" parent="UI" instance=ExtResource("7_u5sy4")]

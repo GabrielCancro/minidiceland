@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dspvubiekkps6"]
+
+[ext_resource type="Texture2D" uid="uid://y7ssq33w0lkk" path="res://assets/tiles.png" id="1_ermph"]
+
+[sub_resource type="GDScript" id="GDScript_ermph"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+	#$Button.connect(\"button_down\",BuildManager.set_building_mode.bind(\"tower\"))
+"
+
+[node name="BuildingCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+script = SubResource("GDScript_ermph")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 0.270588)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, 49)
+texture = ExtResource("1_ermph")
+hframes = 8
+vframes = 2
+frame = 8
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+focus_mode = 0
+mouse_default_cursor_shape = 3
+flat = true

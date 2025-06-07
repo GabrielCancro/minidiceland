@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://dehtjioq6mmbu"]
+
+[ext_resource type="Shader" uid="uid://bpft0wckds7gd" path="res://shaders/dice_shader.gdshader" id="1_4jpyb"]
+[ext_resource type="Script" uid="uid://dtpd4yyx20odq" path="res://nodes/dice.gd" id="1_ku16u"]
+[ext_resource type="Texture2D" uid="uid://o8xpnr22oy8g" path="res://assets/dice/r2.png" id="2_ku16u"]
+[ext_resource type="Texture2D" uid="uid://b7sxsryoscyho" path="res://assets/dice/r4.png" id="3_u1ug2"]
+[ext_resource type="Texture2D" uid="uid://br3deehg0ajqt" path="res://assets/dice/r6.png" id="4_ef480"]
+[ext_resource type="Texture2D" uid="uid://brk4ilhdo55hm" path="res://assets/dice/r1.png" id="5_55nan"]
+[ext_resource type="Texture2D" uid="uid://b5jmbblflodmk" path="res://assets/dice/r3.png" id="6_myph6"]
+[ext_resource type="Texture2D" uid="uid://b427qvh5x83gw" path="res://assets/dice/r5.png" id="7_nretr"]
+[ext_resource type="Texture2D" uid="uid://cmjgoydyad0m8" path="res://assets/ui/bubble.png" id="9_ku16u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkobu"]
+resource_local_to_scene = true
+shader = ExtResource("1_4jpyb")
+shader_parameter/texture_pos_x = ExtResource("5_55nan")
+shader_parameter/texture_neg_x = ExtResource("2_ku16u")
+shader_parameter/texture_pos_y = ExtResource("6_myph6")
+shader_parameter/texture_neg_y = ExtResource("3_u1ug2")
+shader_parameter/texture_pos_z = ExtResource("7_nretr")
+shader_parameter/texture_neg_z = ExtResource("4_ef480")
+shader_parameter/rotation_speed = 1.0
+shader_parameter/cube_size = 0.7
+shader_parameter/zoom = 1.0
+shader_parameter/initial_face = 5
+shader_parameter/border_thickness = 0.05
+shader_parameter/border_strength = 0.4
+shader_parameter/time = 0.0
+shader_parameter/opacity = 1.0
+
+[sub_resource type="SystemFont" id="SystemFont_4jpyb"]
+subpixel_positioning = 0
+
+[node name="dice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ku16u")
+
+[node name="Stored" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0970484
+color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -23.0
+offset_right = 28.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.294785
+color = Color(0.611634, 0.611634, 5.77569e-07, 1)
+
+[node name="btn_store" type="Button" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 34.0
+focus_mode = 0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dkobu")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_55nan")
+
+[node name="Temporal" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -41.0
+offset_top = -42.0
+offset_right = 42.0
+offset_bottom = 41.0
+mouse_filter = 2
+texture = ExtResource("9_ku16u")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = 27.0
+offset_right = 36.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_4jpyb")
+theme_override_font_sizes/font_size = 14
+text = "ZZ"
+horizontal_alignment = 1

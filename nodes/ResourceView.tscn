@@ -1,0 +1,141 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpsb0bnpvld"]
+
+[ext_resource type="Texture2D" uid="uid://chi2ef0fo8stc" path="res://assets/dice/WO.png" id="1_2vxdh"]
+[ext_resource type="Script" uid="uid://22mdytdrnmcs" path="res://nodes/ResourceView.gd" id="1_av0i4"]
+[ext_resource type="Texture2D" uid="uid://xf4srpep12or" path="res://assets/ui/selector.png" id="3_u4y6p"]
+
+[node name="ResourceView" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_av0i4")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_right = 130.0
+offset_bottom = 40.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="T1" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_2vxdh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B" type="TextureRect" parent="HBox/T1"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u4y6p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="T2" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_2vxdh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B" type="TextureRect" parent="HBox/T2"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u4y6p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="T3" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_2vxdh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B" type="TextureRect" parent="HBox/T3"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u4y6p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="T4" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_2vxdh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B" type="TextureRect" parent="HBox/T4"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u4y6p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="T5" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_2vxdh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B" type="TextureRect" parent="HBox/T5"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u4y6p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="T6" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_2vxdh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B" type="TextureRect" parent="HBox/T6"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u4y6p")
+expand_mode = 1
+stretch_mode = 4
